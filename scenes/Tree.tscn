@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3fpen4iq7kdy"]
+
+[ext_resource type="Texture2D" uid="uid://d4h65b1gyl6iu" path="res://assets/objects/plants_sprites.png" id="1_w8ote"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw5nb"]
+atlas = ExtResource("1_w8ote")
+region = Rect2(132, 0, 44, 99)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utct3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw5nb")
+}],
+"loop": true,
+"name": &"plant",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psbbj"]
+size = Vector2(19, 20)
+
+[node name="Node" type="Node"]
+
+[node name="tree" type="StaticBody2D" parent="."]
+
+[node name="tree_sprite" type="AnimatedSprite2D" parent="tree"]
+position = Vector2(543, 4)
+scale = Vector2(0.727273, 0.530303)
+sprite_frames = SubResource("SpriteFrames_utct3")
+animation = &"plant"
+
+[node name="shape_collision" type="CollisionShape2D" parent="tree"]
+position = Vector2(542.5, 16)
+shape = SubResource("RectangleShape2D_psbbj")

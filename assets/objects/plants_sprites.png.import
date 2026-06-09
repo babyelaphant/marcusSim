@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cijq3bb8myrap"
-path="res://.godot/imported/marcoSimComic.jpg-914ab02d128209b7a3c890489a2cd12f.ctex"
+uid="uid://d4h65b1gyl6iu"
+path="res://.godot/imported/plants_sprites.png-4c4edfa944d82d3e2f868a8faefac261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/marcoSimComic.jpg"
-dest_files=["res://.godot/imported/marcoSimComic.jpg-914ab02d128209b7a3c890489a2cd12f.ctex"]
+source_file="res://assets/objects/plants_sprites.png"
+dest_files=["res://.godot/imported/plants_sprites.png-4c4edfa944d82d3e2f868a8faefac261.ctex"]
 
 [params]
 
