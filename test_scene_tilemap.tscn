@@ -1780,7 +1780,7 @@ texture = ExtResource("1_fnhpp")
 63:25/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_i2fqh"]
-custom_data_layer_0/name = "Plant Spawn"
+custom_data_layer_0/name = "Plant_Spawn"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_8g5lb")
 
