@@ -12,7 +12,7 @@ var max_plants = 4
 
 
 func _ready():
-	spawn_trees()
+	spawn_plants()
 
 
 func get_spawn_tiles(spawn_type):
@@ -32,7 +32,7 @@ func get_spawn_tiles(spawn_type):
 	return valid_tiles
 
 
-func spawn_trees():
+func spawn_plants():
 
 	var tiles = get_spawn_tiles("tree")
 
