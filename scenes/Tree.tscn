@@ -20,16 +20,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psbbj"]
 size = Vector2(19, 20)
 
-[node name="Node" type="Node"]
+[node name="plant" type="StaticBody2D"]
 
-[node name="tree" type="StaticBody2D" parent="."]
-
-[node name="tree_sprite" type="AnimatedSprite2D" parent="tree"]
+[node name="tree_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(543, 4)
 scale = Vector2(0.727273, 0.530303)
 sprite_frames = SubResource("SpriteFrames_utct3")
 animation = &"plant"
 
-[node name="shape_collision" type="CollisionShape2D" parent="tree"]
+[node name="shape_collision" type="CollisionShape2D" parent="."]
 position = Vector2(542.5, 16)
 shape = SubResource("RectangleShape2D_psbbj")

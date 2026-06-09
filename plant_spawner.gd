@@ -3,7 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time
 
-@onready var tilemap = $"../TileMap"
+#@onready var tilemap = $"/root/TestSceneTilemap/TileMap"
+@onready var tilemap = $"../GameTileMap/TileMap"
 
 #LOAD IN PLANT IMAGE
 const PLANT = preload("res://scenes/Tree.tscn")
@@ -34,20 +35,20 @@ func get_spawn_tiles(Plant_Spawn):
 
 func spawn_plants():
 
-	var tiles = get_spawn_tiles("tree")
+	var tiles = get_spawn_tiles("plant")
 
 	var amount_to_spawn = min(max_plants, tiles.size())
-
+	print("Found ", tiles.size(), " tiles matching the 'plant' custom data layer.")
 	for i in range(amount_to_spawn):
 
 		var cell = tiles.pick_random()
 
-		var plant = PLANT.instantiate()
+		var plant2 = PLANT.instantiate()
 
-		plant.global_position = tilemap.to_global(
+		plant2.global_position = tilemap.to_global(
 			tilemap.map_to_local(cell)
 		)
 
-		add_child(plant)
+		add_child(plant2)
 
 		tiles.erase(cell)
