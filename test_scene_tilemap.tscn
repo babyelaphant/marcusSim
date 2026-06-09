@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d3aopf2ax7qv6" path="res://scenes/player_movement.gd" id="3_hjodl"]
 [ext_resource type="Texture2D" uid="uid://jb3f6xr4v650" path="res://assets/character/16x16 Idle-Sheet.png" id="3_hs26i"]
 [ext_resource type="Texture2D" uid="uid://lyapswnm432e" path="res://assets/character/16x16 Walk-Sheet.png" id="5_ln4mt"]
+[ext_resource type="Script" uid="uid://btq22fb16yhvm" path="res://plant_spawner.gd" id="6_7abwp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8g5lb"]
 texture = ExtResource("1_fnhpp")
@@ -2112,3 +2113,6 @@ shape = SubResource("CircleShape2D_r2vs0")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D" unique_id=1121768344]
 shape = SubResource("SegmentShape2D_yhdyw")
+
+[node name="plantSpawner" type="Node" parent="." unique_id=897742634]
+script = ExtResource("6_7abwp")
