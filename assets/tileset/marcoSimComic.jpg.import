@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://20pdl2i5ras3"
-path="res://.godot/imported/16x16 Rotate-Sheet.png-b1fba20511802bbd520f6935b63efa3f.ctex"
+uid="uid://cijq3bb8myrap"
+path="res://.godot/imported/marcoSimComic.jpg-914ab02d128209b7a3c890489a2cd12f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/16x16 Rotate-Sheet.png"
-dest_files=["res://.godot/imported/16x16 Rotate-Sheet.png-b1fba20511802bbd520f6935b63efa3f.ctex"]
+source_file="res://assets/tileset/marcoSimComic.jpg"
+dest_files=["res://.godot/imported/marcoSimComic.jpg-914ab02d128209b7a3c890489a2cd12f.ctex"]
 
 [params]
 
