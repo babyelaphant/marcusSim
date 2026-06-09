@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psbbj"]
-size = Vector2(19, 20)
+size = Vector2(16, 16)
 
 [node name="plant" type="StaticBody2D"]
 
@@ -28,5 +28,5 @@ sprite_frames = SubResource("SpriteFrames_utct3")
 animation = &"plant"
 
 [node name="shape_collision" type="CollisionShape2D" parent="."]
-position = Vector2(544, 16)
+position = Vector2(1, 15)
 shape = SubResource("RectangleShape2D_psbbj")
