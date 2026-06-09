@@ -19,3 +19,6 @@ func _physics_process(delta):
 		if %sprite.animation != "Idle": %sprite.animation = "Idle"
 	
 	move_and_slide()
+
+func player():
+	pass # Used for identification by the customer

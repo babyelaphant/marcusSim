@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://46ejd15q32j5"]
+[gd_scene load_steps=46 format=3 uid="uid://46ejd15q32j5"]
 
 [ext_resource type="Texture2D" uid="uid://cijq3bb8myrap" path="res://assets/tileset/marcoSimComic.jpg" id="1_fnhpp"]
 [ext_resource type="PackedScene" uid="uid://b1nwy1fd4h1yc" path="res://scenes/player.tscn" id="2_54yye"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://jb3f6xr4v650" path="res://assets/character/16x16 Idle-Sheet.png" id="3_hs26i"]
 [ext_resource type="Texture2D" uid="uid://lyapswnm432e" path="res://assets/character/16x16 Walk-Sheet.png" id="5_ln4mt"]
 [ext_resource type="Script" path="res://plant_spawner.gd" id="6_7abwp"]
+[ext_resource type="PackedScene" uid="uid://bdtnrcgyg6y3d" path="res://scenes/customer.tscn" id="8_4nk3t"]
 [ext_resource type="PackedScene" uid="uid://d3fpen4iq7kdy" path="res://scenes/Tree.tscn" id="8_kiep2"]
+[ext_resource type="PackedScene" uid="uid://th7vncqwpo2c" path="res://dialogue/dialogue.tscn" id="9_4xdcm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8g5lb"]
 texture = ExtResource("1_fnhpp")
@@ -1962,6 +1964,14 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 12.0
 
+[node name="customer" parent="." instance=ExtResource("8_4nk3t")]
+
+[node name="Dialogue2" parent="customer" instance=ExtResource("9_4xdcm")]
+offset_left = 667.0
+offset_top = 95.0
+offset_right = 707.0
+offset_bottom = 135.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="MapBound" type="CollisionShape2D" parent="StaticBody2D"]
@@ -2117,8 +2127,6 @@ shape = SubResource("SegmentShape2D_yhdyw")
 
 [node name="plantSpawner" type="Node" parent="."]
 script = ExtResource("6_7abwp")
-
-[node name="tree" type="StaticBody2D" parent="."]
 
 [node name="tree_scene" parent="." instance=ExtResource("8_kiep2")]
 position = Vector2(694, -540)
