@@ -5,7 +5,7 @@ extends Node
 
 @onready var tilemap = $"../TileMap"
 
-
+#LOAD IN PLANT IMAGE
 const PLANT = preload("res://Tree.tscn")
 
 var max_plants = 4
