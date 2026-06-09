@@ -26,7 +26,7 @@ func get_spawn_tiles(Plant_Spawn):
 		if data == null:
 			continue
 
-		if data.get_custom_data("Plant_Spawn") == spawn_type:
+		if data.get_custom_data("Plant_Spawn") == Plant_Spawn:
 			valid_tiles.append(cell)
 
 	return valid_tiles
