@@ -42,13 +42,10 @@ func spawn_plants():
 	for i in range(amount_to_spawn):
 
 		var cell = tiles.pick_random()
-
 		var plant2 = PLANT.instantiate()
-
 		plant2.global_position = tilemap.to_global(
 			tilemap.map_to_local(cell)
 		)
-
 		add_child(plant2)
 
 		tiles.erase(cell)
