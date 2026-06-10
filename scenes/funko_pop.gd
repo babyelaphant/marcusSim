@@ -14,6 +14,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("pickup"):
 			print("we pickedup the funko")
 			queue_free()
+			player.addFunkoPop()
 			# TODO make function to add one funko pop to the player
 
 
