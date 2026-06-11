@@ -12,6 +12,7 @@ var questRecieved = false
 
 var player
 @onready var playerTemp = $"../player"
+@onready var dialogueTemp = $"../customer/Dialogue"
 var player_in_chat_zone = false
 
 enum {
@@ -44,16 +45,17 @@ func _process(delta):
 			MOVE:
 				move(delta)
 	if player_in_chat_zone == true and Input.is_action_just_pressed("chat"):
-		print("SUP MA BOIIIII")
+
 		if playerTemp.num_of_funko_pops > 0 and questRecieved == true:
 			playerTemp.delFunkoPop()
 			print("Thank you for the Funko Pop")
-			# add the dialogue and make the customer leave the store
+			dialogueTemp.questDone = true
 		$Dialogue.start()
 		questRecieved = true
 		is_roaming = false
 		is_chatting = true
 		$AnimatedSprite2D.play("idle")
+
 func choose(array):
 	array.shuffle()
 	return array.front()

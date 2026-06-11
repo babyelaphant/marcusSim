@@ -21,9 +21,9 @@ func get_spawn_tiles(Plant_Spawn):
 	var valid_tiles = []
 
 	for cell in tilemap.get_used_cells(0):
-
+		
 		var data = tilemap.get_cell_tile_data(0, cell)
-
+		
 		if data == null:
 			continue
 

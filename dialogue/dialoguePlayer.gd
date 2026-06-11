@@ -7,6 +7,7 @@ signal dialogue_finished
 var dialogue = []
 var current_dialogue_id = 0
 var d_active = false
+var questDone = false
 
 func _ready():
 	$NinePatchRect.visible = false
@@ -21,6 +22,13 @@ func start():
 	next_script()
 	
 func load_dialogue():
+
+	if questDone == true:
+		print("HEY")
+		var file = FileAccess.open("res://dialogue/customer_done.json", FileAccess.READ)
+		var content = JSON.parse_string(file.get_as_text())
+		return content
+
 	var file = FileAccess.open("res://dialogue/customer.json", FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
 	return content
