@@ -42,5 +42,6 @@ scale = Vector2(100, 100)
 texture = ExtResource("1_j4nqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.825, 0.825)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]

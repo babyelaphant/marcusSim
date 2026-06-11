@@ -9,10 +9,11 @@ var start_pos
 var is_roaming = true
 var is_chatting = false
 var questRecieved = false
+var customerDone = false
 
 var player
 @onready var playerTemp = $"../player"
-@onready var dialogueTemp = $"../customer/Dialogue"
+@onready var dialogueTemp = get_node("../" + name + "/Dialogue")
 var player_in_chat_zone = false
 
 enum {
@@ -49,18 +50,20 @@ func _process(delta):
 		if playerTemp.num_of_funko_pops > 0 and questRecieved == true:
 			playerTemp.delFunkoPop()
 			dialogueTemp.questDone = true
+			customerDone = true
 		$Dialogue.start()
 		questRecieved = true
 		is_roaming = false
 		is_chatting = true
 		$AnimatedSprite2D.play("idle")
 		
-	if dialogueTemp.customerLeave == true:
+	if dialogueTemp.customerLeave and customerDone:
 		# move customer outside of store
 		# freeing for right now :P
+		print("hey")
 		queue_free()
-		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-		print("moving customer outside of store")
+		# get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
 
 func choose(array):
 	array.shuffle()
