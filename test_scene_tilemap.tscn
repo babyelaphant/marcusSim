@@ -2207,6 +2207,9 @@ layer_0/tile_data = PackedInt32Array(-65538, 327680, 4, -131069, 655360, 4, -327
 [node name="funko-pop" parent="." instance=ExtResource("10_jdvr6")]
 position = Vector2(596, 212)
 
+[node name="funko-pop2" parent="." instance=ExtResource("10_jdvr6")]
+position = Vector2(439, 166)
+
 [node name="player" parent="." instance=ExtResource("2_54yye")]
 script = ExtResource("3_hjodl")
 movement_speed = 250.0
