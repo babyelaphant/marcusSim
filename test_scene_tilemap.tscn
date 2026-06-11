@@ -1933,7 +1933,7 @@ shape = SubResource("RectangleShape2D_tncx7")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(613, 94)
-zoom = Vector2(1.35, 1.35)
+zoom = Vector2(1.65, 1.65)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 12.0
