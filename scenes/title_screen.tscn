@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://icoj64hw1lt5"]
+[gd_scene load_steps=3 format=3 uid="uid://icoj64hw1lt5"]
 
 [ext_resource type="Texture2D" uid="uid://cubs14ojhqrhb" path="res://assets/objects/inventory-slot.png" id="1_j4nqv"]
+[ext_resource type="Script" path="res://scenes/title_screen_manager.gd" id="1_oeel3"]
 
 [node name="Title_Screen" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ offset_left = 574.0
 offset_top = 324.0
 offset_right = 614.0
 offset_bottom = 364.0
+script = ExtResource("1_oeel3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -40,3 +42,5 @@ scale = Vector2(100, 100)
 texture = ExtResource("1_j4nqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
