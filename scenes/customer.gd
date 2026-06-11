@@ -25,6 +25,7 @@ func _ready():
 	randomize()
 	start_pos = position
 func _process(delta):
+
 	if current_state == 0 or current_state == 1:
 		$AnimatedSprite2D.play("idle")
 	elif current_state == 2 and !is_chatting:
@@ -45,16 +46,20 @@ func _process(delta):
 			MOVE:
 				move(delta)
 	if player_in_chat_zone == true and Input.is_action_just_pressed("chat"):
-
 		if playerTemp.num_of_funko_pops > 0 and questRecieved == true:
 			playerTemp.delFunkoPop()
-			print("Thank you for the Funko Pop")
 			dialogueTemp.questDone = true
 		$Dialogue.start()
 		questRecieved = true
 		is_roaming = false
 		is_chatting = true
 		$AnimatedSprite2D.play("idle")
+		
+	if dialogueTemp.customerLeave == true:
+		# move customer outside of store
+		# freeing for right now :P
+		queue_free()
+		print("moving customer outside of store")
 
 func choose(array):
 	array.shuffle()
