@@ -59,6 +59,7 @@ func _process(delta):
 		# move customer outside of store
 		# freeing for right now :P
 		queue_free()
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 		print("moving customer outside of store")
 
 func choose(array):
