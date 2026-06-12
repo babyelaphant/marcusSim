@@ -12,6 +12,7 @@ var questRecieved = false
 var customerDone = false
 
 var player
+@onready var main = $"../"
 @onready var playerTemp = $"../player"
 @onready var dialogueTemp = get_node("../" + name + "/Dialogue")
 var player_in_chat_zone = false
@@ -24,6 +25,7 @@ enum {
 
 func _ready():
 	randomize()
+	main.numOfCustomers += 1
 	start_pos = position
 func _process(delta):
 
@@ -61,6 +63,7 @@ func _process(delta):
 		# move customer outside of store
 		# freeing for right now :P
 		print("hey")
+		main.numOfCustomers -= 1
 		queue_free()
 		# get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	

@@ -1,5 +1,6 @@
-[gd_scene load_steps=57 format=3 uid="uid://46ejd15q32j5"]
+[gd_scene load_steps=58 format=3 uid="uid://46ejd15q32j5"]
 
+[ext_resource type="Script" path="res://game_manager.gd" id="1_b2ms4"]
 [ext_resource type="Texture2D" uid="uid://cijq3bb8myrap" path="res://assets/tileset/marcoSimComic.jpg" id="1_fnhpp"]
 [ext_resource type="PackedScene" uid="uid://b1nwy1fd4h1yc" path="res://scenes/player.tscn" id="2_54yye"]
 [ext_resource type="Texture2D" uid="uid://ob0ndssbsdoq" path="res://assets/tileset/roads2W.png" id="2_c8dw6"]
@@ -2199,6 +2200,7 @@ b = Vector2(213, 62)
 
 [node name="TestSceneTilemap" type="Node2D"]
 position = Vector2(-97, 10)
+script = ExtResource("1_b2ms4")
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
