@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://46ejd15q32j5"]
+[gd_scene load_steps=57 format=3 uid="uid://46ejd15q32j5"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_b2ms4"]
 [ext_resource type="Texture2D" uid="uid://cijq3bb8myrap" path="res://assets/tileset/marcoSimComic.jpg" id="1_fnhpp"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bdtnrcgyg6y3d" path="res://scenes/customer.tscn" id="8_4nk3t"]
 [ext_resource type="PackedScene" uid="uid://d3fpen4iq7kdy" path="res://scenes/Tree.tscn" id="8_kiep2"]
 [ext_resource type="PackedScene" uid="uid://c3euddhchbgd2" path="res://scenes/funko_pop.tscn" id="10_jdvr6"]
-[ext_resource type="Script" path="res://clock_out.gd" id="11_5p3go"]
+[ext_resource type="PackedScene" uid="uid://dopi5or7e72ve" path="res://scenes/clock_out.tscn" id="12_hepqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8g5lb"]
 texture = ExtResource("1_fnhpp")
@@ -2196,8 +2196,6 @@ b = Vector2(28, 76)
 a = Vector2(185, -27)
 b = Vector2(213, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_52lhn"]
-
 [node name="TestSceneTilemap" type="Node2D"]
 position = Vector2(-97, 10)
 script = ExtResource("1_b2ms4")
@@ -2415,17 +2413,5 @@ script = ExtResource("6_7abwp")
 [node name="tree_scene" parent="." instance=ExtResource("8_kiep2")]
 position = Vector2(-21, 5)
 
-[node name="clock_out" type="Area2D" parent="."]
-script = ExtResource("11_5p3go")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="clock_out"]
-position = Vector2(639, 26)
-shape = SubResource("RectangleShape2D_52lhn")
-
-[connection signal="body_entered" from="clock_out" to="player" method="_on_clock_out_body_entered"]
-[connection signal="body_entered" from="clock_out" to="clock_out" method="_on_body_entered"]
-[connection signal="body_exited" from="clock_out" to="clock_out" method="_on_body_exited"]
-[connection signal="child_entered_tree" from="clock_out/CollisionShape2D" to="funko-pop" method="_on_collision_shape_2d_child_entered_tree"]
-[connection signal="child_entered_tree" from="clock_out/CollisionShape2D" to="player" method="_on_collision_shape_2d_child_entered_tree"]
-[connection signal="child_entered_tree" from="clock_out/CollisionShape2D" to="clock_out" method="_on_collision_shape_2d_child_entered_tree"]
-[connection signal="child_exiting_tree" from="clock_out/CollisionShape2D" to="clock_out" method="_on_collision_shape_2d_child_exiting_tree"]
+[node name="clock_out" parent="." instance=ExtResource("12_hepqp")]
+position = Vector2(640, 29)
