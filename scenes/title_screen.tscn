@@ -63,6 +63,10 @@ zoom = Vector2(0.825, 0.825)
 scale = Vector2(0.755, 0.755)
 sprite_frames = SubResource("SpriteFrames_1hct4")
 autoplay = "default"
+<<<<<<< HEAD
 frame_progress = 0.677112
+=======
+frame_progress = 0.445414
+>>>>>>> cac0ff0b210b255fa168b351f1f025474aa56433
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3euddhchbgd2"]
+
+[ext_resource type="Script" path="res://scenes/funko_pop.gd" id="1_1qq06"]
+[ext_resource type="Texture2D" uid="uid://b0t1urn8i242h" path="res://assets/objects/funko-pops.png" id="1_s75y4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1om"]
+atlas = ExtResource("1_s75y4")
+region = Rect2(29, 246, 161, 123)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48tce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr1om")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmvbh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ktxs"]
+radius = 15.0748
+
+[node name="funko-pop" type="StaticBody2D"]
+script = ExtResource("1_1qq06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.171196, 0.198171)
+sprite_frames = SubResource("SpriteFrames_48tce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qmvbh")
+
+[node name="pickup_detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickup_detection"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_5ktxs")
+
+[connection signal="body_entered" from="pickup_detection" to="." method="_on_pickup_detection_body_entered"]
+[connection signal="body_exited" from="pickup_detection" to="." method="_on_pickup_detection_body_exited"]

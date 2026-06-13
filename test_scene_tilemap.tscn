@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 [gd_scene load_steps=44 format=3 uid="uid://46ejd15q32j5"]
+=======
+[gd_scene load_steps=57 format=3 uid="uid://46ejd15q32j5"]
+>>>>>>> cac0ff0b210b255fa168b351f1f025474aa56433
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_b2ms4"]
 [ext_resource type="Texture2D" uid="uid://cijq3bb8myrap" path="res://assets/tileset/marcoSimComic.jpg" id="1_fnhpp"]
 [ext_resource type="PackedScene" uid="uid://b1nwy1fd4h1yc" path="res://scenes/player.tscn" id="2_54yye"]
 [ext_resource type="Texture2D" uid="uid://ob0ndssbsdoq" path="res://assets/tileset/roads2W.png" id="2_c8dw6"]
+<<<<<<< HEAD
+=======
+[ext_resource type="Script" path="res://scenes/player_movement.gd" id="3_hjodl"]
+[ext_resource type="Texture2D" uid="uid://jb3f6xr4v650" path="res://assets/character/16x16 Idle-Sheet.png" id="3_hs26i"]
+[ext_resource type="Texture2D" uid="uid://lyapswnm432e" path="res://assets/character/16x16 Walk-Sheet.png" id="5_ln4mt"]
+>>>>>>> cac0ff0b210b255fa168b351f1f025474aa56433
 [ext_resource type="Script" path="res://plant_spawner.gd" id="6_7abwp"]
 [ext_resource type="PackedScene" uid="uid://bdtnrcgyg6y3d" path="res://scenes/customer.tscn" id="8_4nk3t"]
 [ext_resource type="PackedScene" uid="uid://d3fpen4iq7kdy" path="res://scenes/Tree.tscn" id="8_kiep2"]
@@ -2017,6 +2027,81 @@ custom_data_layer_0/name = "Plant_Spawn"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_8g5lb")
 sources/1 = SubResource("TileSetAtlasSource_pe3kb")
+<<<<<<< HEAD
+=======
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhlko"]
+atlas = ExtResource("3_hs26i")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lu1e"]
+atlas = ExtResource("3_hs26i")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh7gj"]
+atlas = ExtResource("3_hs26i")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hjra"]
+atlas = ExtResource("3_hs26i")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5nki"]
+atlas = ExtResource("5_ln4mt")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2otvt"]
+atlas = ExtResource("5_ln4mt")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx1wt"]
+atlas = ExtResource("5_ln4mt")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yislj"]
+atlas = ExtResource("5_ln4mt")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6y2td"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhlko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lu1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh7gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hjra")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5nki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2otvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx1wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yislj")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tncx7"]
+size = Vector2(17.5, 12.5)
+>>>>>>> cac0ff0b210b255fa168b351f1f025474aa56433
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4i6xd"]
 size = Vector2(1019.5, 30.5)
@@ -2139,6 +2224,7 @@ position = Vector2(596, 212)
 position = Vector2(439, 166)
 
 [node name="player" parent="." instance=ExtResource("2_54yye")]
+<<<<<<< HEAD
 movement_speed = 250.0
 
 [node name="customer" parent="." instance=ExtResource("8_4nk3t")]
@@ -2148,6 +2234,37 @@ position = Vector2(-141, -79)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+=======
+script = ExtResource("3_hjodl")
+movement_speed = 250.0
+
+[node name="sprite" type="AnimatedSprite2D" parent="player"]
+unique_name_in_owner = true
+position = Vector2(597.5, 2.50002)
+scale = Vector2(2.04167, 1.875)
+sprite_frames = SubResource("SpriteFrames_6y2td")
+animation = &"Walking"
+autoplay = "Idle"
+
+[node name="collision" type="CollisionShape2D" parent="player"]
+position = Vector2(598, 17.25)
+shape = SubResource("RectangleShape2D_tncx7")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(613, 94)
+zoom = Vector2(1.65, 1.65)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+
+[node name="customer" parent="." instance=ExtResource("8_4nk3t")]
+
+[node name="customer2" parent="." instance=ExtResource("8_4nk3t")]
+position = Vector2(-141, -79)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+>>>>>>> cac0ff0b210b255fa168b351f1f025474aa56433
 [node name="MapBound" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(402, 272)
 shape = SubResource("RectangleShape2D_4i6xd")

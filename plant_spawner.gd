@@ -1,7 +1,14 @@
 extends Node
 
 # Called when the node enters the scene tree for the first time
+<<<<<<< HEAD
 @onready var tilemap = $"../GameTileMap/TileMap"
+=======
+
+#@onready var tilemap = $"/root/TestSceneTilemap/TileMap"
+@onready var tilemap = $"../GameTileMap/TileMap"
+
+>>>>>>> cac0ff0b210b255fa168b351f1f025474aa56433
 #LOAD IN PLANT IMAGE
 const PLANT = preload("res://scenes/Tree.tscn")
 
