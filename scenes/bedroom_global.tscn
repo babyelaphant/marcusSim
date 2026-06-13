@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dw1cko1xvjsl2"]
+[gd_scene load_steps=52 format=3 uid="uid://dw1cko1xvjsl2"]
 
 [ext_resource type="Script" path="res://scenes/bedroom_global.gd" id="1_k1rgk"]
 [ext_resource type="Texture2D" uid="uid://dgmc0f365bi27" path="res://assets/tileset/marcus_room.jpg" id="2_1kpo4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://jb3f6xr4v650" path="res://assets/character/16x16 Idle-Sheet.png" id="10_87njf"]
 [ext_resource type="Texture2D" uid="uid://lyapswnm432e" path="res://assets/character/16x16 Walk-Sheet.png" id="11_xbf1q"]
 [ext_resource type="Script" path="res://scenes/interact.gd" id="12_3j06n"]
+[ext_resource type="Script" path="res://scenes/door.gd" id="13_mltuo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1iph"]
 texture = ExtResource("2_1kpo4")
@@ -2749,6 +2750,9 @@ b = Vector2(1025, 97)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajnun"]
 size = Vector2(122, 67)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj64q"]
+size = Vector2(78, 24)
+
 [node name="bedroom_global" type="Node2D"]
 script = ExtResource("1_k1rgk")
 
@@ -2862,5 +2866,26 @@ text = "E (interact)"
 position = Vector2(893, 195.5)
 shape = SubResource("RectangleShape2D_ajnun")
 
+[node name="door" type="Area2D" parent="bedroom_scene"]
+script = ExtResource("13_mltuo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom_scene/door"]
+position = Vector2(763, 304)
+shape = SubResource("RectangleShape2D_hj64q")
+
+[node name="Label" type="Label" parent="bedroom_scene/door"]
+offset_left = 557.0
+offset_top = 229.0
+offset_right = 708.0
+offset_bottom = 252.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 746.0
+offset_top = 62.0
+offset_right = 848.0
+offset_bottom = 95.0
+
 [connection signal="body_entered" from="bedroom_scene/interact" to="bedroom_scene/interact" method="_on_body_entered"]
 [connection signal="body_exited" from="bedroom_scene/interact" to="bedroom_scene/interact" method="_on_body_exited"]
+[connection signal="body_entered" from="bedroom_scene/door" to="bedroom_scene/door" method="_on_body_entered"]
+[connection signal="body_exited" from="bedroom_scene/door" to="bedroom_scene/door" method="_on_body_exited"]
