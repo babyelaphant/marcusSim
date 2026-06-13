@@ -177,7 +177,16 @@ block_scene = ExtResource("5_7ps1j")
 position = Vector2(40, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="point"]
-position = Vector2(-21, 298)
+position = Vector2(-59, 295)
 shape = SubResource("RectangleShape2D_lwt21")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 769.0
+offset_top = 2.0
+offset_right = 1039.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 76
+text = "Points: "
 
 [connection signal="area_entered" from="point" to="." method="_on_point_area_entered"]

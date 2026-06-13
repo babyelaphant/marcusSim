@@ -1,19 +1,11 @@
 extends Node2D
 
-var points = 0
+var playerWon = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Label.text = "Points: " + str(points)
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_point_area_entered(area):
-	points += 1
-	print(points)
-	$Label.text = "Points: " + str(points)
