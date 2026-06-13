@@ -13,7 +13,8 @@ func _process(delta):
 	if player_in_area:
 		if Input.is_action_just_pressed("pickup"):
 			print("computer time")
-			main.oldPosition = player.global_position
+			Global.player_position = player.global_position
+			Global.position_saved = true
 			print(player.global_position)
 			get_tree().change_scene_to_file("res://scenes/computer_mini_game.tscn")
 
