@@ -2,4 +2,4 @@ extends Control
 
 func _on_button_pressed():
 	#get_tree().change_scene_to_file("res://test_scene_tilemap.tscn")
-	get_tree().change_scene_to_file("res://scenes/bedroom_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/bedroom_global.tscn")
