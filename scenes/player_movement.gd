@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var movement_speed : float = 500
 var character_direction : Vector2
 
+var num_of_funko_pops = 0
+
 func _physics_process(delta):
 	character_direction.x = Input.get_axis("move_left", "move_right")
 	character_direction.y = Input.get_axis("move_up", "move_down")
@@ -19,3 +21,12 @@ func _physics_process(delta):
 		if %sprite.animation != "Idle": %sprite.animation = "Idle"
 	
 	move_and_slide()
+
+func addFunkoPop():
+	num_of_funko_pops += 1
+
+func delFunkoPop():
+	num_of_funko_pops -= 1
+
+func player():
+	pass # Used for identification by the customer

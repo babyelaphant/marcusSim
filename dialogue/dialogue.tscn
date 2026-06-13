@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://th7vncqwpo2c"]
+
+[ext_resource type="Script" path="res://dialogue/dialoguePlayer.gd" id="1_85f8c"]
+[ext_resource type="Texture2D" uid="uid://cubs14ojhqrhb" path="res://assets/objects/inventory-slot.png" id="1_nt6wn"]
+
+[node name="Dialogue" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_85f8c")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -43.0
+offset_right = 40.0
+offset_bottom = -5.0
+texture = ExtResource("1_nt6wn")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 153.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+text = "Leo:"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 184.0
+offset_bottom = 80.0
+scale = Vector2(0.4, 0.4)
+text = "holder"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds3pfmyxjcwwc"]
+
+[ext_resource type="AudioStream" uid="uid://dscry7r5baavg" path="res://sfx/marcus_background.mp3" id="1_if77m"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_if77m")
+volume_db = -42.162
+autoplay = true

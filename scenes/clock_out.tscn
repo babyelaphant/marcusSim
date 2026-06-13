@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dopi5or7e72ve"]
+
+[ext_resource type="Script" path="res://clock_out.gd" id="1_aqao4"]
+[ext_resource type="Texture2D" uid="uid://blu5dem3e4u0p" path="res://assets/screens/Screenshot 2026-06-11 202915.png" id="2_e1d30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52lhn"]
+
+[node name="clock_out" type="Area2D"]
+script = ExtResource("1_aqao4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_52lhn")
+
+[node name="popUp" type="Sprite2D" parent="."]
+position = Vector2(46.2438, -43.97)
+scale = Vector2(0.0688878, 0.130142)
+texture = ExtResource("2_e1d30")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="child_entered_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]
+[connection signal="child_exiting_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_exiting_tree"]
